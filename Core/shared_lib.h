@@ -21,6 +21,7 @@
 
     double SHARED_LIB expectedFuturePrice(double lastPrice, double currentPrice, bool stockIsRaising, string stockRelativeGraphLocation);
 
+
     #ifdef __cplusplus
         }
     #endif

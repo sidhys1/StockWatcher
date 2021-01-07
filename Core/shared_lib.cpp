@@ -2,25 +2,17 @@
 #include <math.h>
 #include "shared_lib.h"
 
-
-using namespace std;
-
 bool SHARED_LIB stockIsRaising(double lastPrice, double currentPrice) 
 {
-    if(currentPrice > lastPrice)
-{
+    if(currentPrice > lastPrice) {
     return true;
-}
-else
-{
+    } else  {
     return false;
-}
-}
+} }
 
 
-
-string SHARED_LIB stockRelativeGraphLocation(int last100prices [100], double currentPrice) 
-{
+std::string SHARED_LIB stockRelativeGraphLocation(int last100prices [100], double currentPrice) 
+{   
   int min, max, x, i;
 
    min = last100prices[0];
@@ -37,18 +29,16 @@ string SHARED_LIB stockRelativeGraphLocation(int last100prices [100], double cur
         }
     }   
 
-    if (currentPrice < min) {
+    if (currentPrice < min) 
         return "MIN";
-    }
 
-     if (currentPrice > max) {
+     if (currentPrice > max) 
         return "MAX";
-    }
-
-
+    
+    return "Unable to calculate a relative graph location.";
 }
 
-double SHARED_LIB expectedFuturePrice(double lastPrice, double currentPrice, bool stockIsRaising, string stockRelativeGraphLocation) 
+double SHARED_LIB expectedFuturePrice(double lastPrice, double currentPrice, bool stockIsRaising, std::string stockRelativeGraphLocation) 
 { 
     int relativePriceGrowth = currentPrice - lastPrice; 
     int halfOfRelativePriceGrowth = 0.5 * relativePriceGrowth;
