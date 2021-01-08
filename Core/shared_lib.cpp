@@ -11,6 +11,41 @@ bool SHARED_LIB stockIsRaising(double lastPrice, double currentPrice)
 } }
 
 
+
+int SHARED_LIB CheckForExceptions(string stockRelativeGraphLocation, bool stockIsRaising, double currentPrice, double lastPrice) 
+{
+    if (stockRelativeGraphLocation == "Unable to calculate a relative graph location.") 
+        return -1;
+
+    if (currentPrice < lastPrice) {
+        if(stockIsRaising = true) {
+            return -1;
+        }
+    }
+
+     if (currentPrice > lastPrice) {
+        if(stockIsRaising = false) {
+            return -1;
+        }
+    }
+
+    if(stockIsRaising = true) {
+        if(lastPrice > currentPrice) {
+            return -1;
+        }
+    }
+
+    
+    if(stockIsRaising = false) {
+        if(lastPrice < currentPrice) {
+            return -1;
+        }
+    }
+    
+    return 0;        
+}
+
+
 std::string SHARED_LIB stockRelativeGraphLocation(int last100prices [100], double currentPrice) 
 {   
   int min, max, x, i;
