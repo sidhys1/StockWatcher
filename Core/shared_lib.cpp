@@ -2,6 +2,9 @@
 #include <math.h>
 #include "shared_lib.h"
 
+using std::vector;
+using std::string;
+
 bool SHARED_LIB stockIsRaising(double lastPrice, double currentPrice) 
 {
     if(currentPrice > lastPrice) {
@@ -11,9 +14,8 @@ bool SHARED_LIB stockIsRaising(double lastPrice, double currentPrice)
 } }
 
 
-
 int SHARED_LIB CheckForExceptions(std::string stockRelativeGraphLocation, bool stockIsRaising, double currentPrice, double lastPrice) 
-{std
+   
     if (stockRelativeGraphLocation == "Unable to calculate a relative graph location.") 
         return -1;
 
