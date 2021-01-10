@@ -14,7 +14,7 @@ bool SHARED_LIB stockIsRaising(double lastPrice, double currentPrice)
 } }
 
 
-int SHARED_LIB CheckForExceptions(std::string stockRelativeGraphLocation, bool stockIsRaising, double currentPrice, double lastPrice) 
+int SHARED_LIB CheckForExceptions(string stockRelativeGraphLocation, bool stockIsRaising, double currentPrice, double lastPrice) 
    
     if (stockRelativeGraphLocation == "Unable to calculate a relative graph location.") 
         return -1;
@@ -48,7 +48,7 @@ int SHARED_LIB CheckForExceptions(std::string stockRelativeGraphLocation, bool s
 }
 
 
-std::string SHARED_LIB stockRelativeGraphLocation(int last100prices [100], double currentPrice) 
+string SHARED_LIB stockRelativeGraphLocation(int last100prices [100], double currentPrice) 
 {   
   int min, max, x, i;
 
@@ -75,7 +75,7 @@ std::string SHARED_LIB stockRelativeGraphLocation(int last100prices [100], doubl
     return "Unable to calculate a relative graph location.";
 }
 
-double SHARED_LIB expectedFuturePrice(double lastPrice, double currentPrice, bool stockIsRaising, std::string stockRelativeGraphLocation) 
+double SHARED_LIB expectedFuturePrice(double lastPrice, double currentPrice, bool stockIsRaising, string stockRelativeGraphLocation) 
 { 
     int relativePriceGrowth = currentPrice - lastPrice; 
     int halfOfRelativePriceGrowth = 0.5 * relativePriceGrowth;
