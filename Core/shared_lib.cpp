@@ -12,8 +12,8 @@ bool SHARED_LIB stockIsRaising(double lastPrice, double currentPrice)
 
 
 
-int SHARED_LIB CheckForExceptions(string stockRelativeGraphLocation, bool stockIsRaising, double currentPrice, double lastPrice) 
-{
+int SHARED_LIB CheckForExceptions(std::string stockRelativeGraphLocation, bool stockIsRaising, double currentPrice, double lastPrice) 
+{std
     if (stockRelativeGraphLocation == "Unable to calculate a relative graph location.") 
         return -1;
 
