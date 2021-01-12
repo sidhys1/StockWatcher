@@ -17,14 +17,17 @@ namespace StockApp
     [DllImport("user32.dll", CharSet = CharSet.Unicode)]
     public static extern int MessageBox(IntPtr hWnd, String text, String caption, uint type);
 
-
-    public Loader()
+    
+         public Loader()
         {
             InitializeComponent();
         }
 
         void checkForDLLs() { 
-        
+            try {
+            } catch {
+            MessageBox(new IntPtr(0), "Failed to find required DLLs.", "Error", 0);
+            }
         }
 
         void changeLoadingText(string newTxt) {
@@ -34,7 +37,6 @@ namespace StockApp
         private void Loader_Load(object sender, EventArgs e)
         {
             changeLoadingText("Checking DLLs");
-            MessageBox(new IntPtr(0), "Error data goes here", "Error", 0);
         }
     }
 }
