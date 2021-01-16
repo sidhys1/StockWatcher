@@ -5,13 +5,7 @@
 using std::vector;
 using std::string;
 
-bool SHARED_LIB stockIsRaising(double lastPrice, double currentPrice) 
-{
-    if(currentPrice > lastPrice) {
-    return true;
-    } else  {
-    return false;
-} }
+bool SHARED_LIB stockIsRaising(double lastPrice, double currentPrice) {  if(currentPrice > lastPrice) { return true; } else { return false; } }
 
 
 int SHARED_LIB CheckForExceptions(string stockRelativeGraphLocation, bool stockIsRaising, double currentPrice, double lastPrice) 
